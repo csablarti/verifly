@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)file:///C:/Users/csabl/Downloads/verifly_1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verifly – Verified profiles about trading mentors</title>
+  <link rel="stylesheet" href="./Verifly – Verified profiles about trading mentors HTML_files/tabler-icons.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #111; color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; min-height: 100vh; }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 2rem; border-bottom: 0.5px solid rgba(255,255,255,0.08); position: sticky; top: 0; background: #111; z-index: 100; }
+    .nav-logo { font-size: 22px; font-weight: 600; letter-spacing: -0.5px; color: #fff; text-decoration: none; }
+    .nav-logo span { color: #378ADD; }
+    .nav-btns { display: flex; gap: 10px; }
+    .btn-ghost { font-size: 14px; padding: 8px 18px; border-radius: 8px; border: 0.5px solid rgba(255,255,255,0.2); background: transparent; color: #fff; cursor: pointer; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.06); }
+    .btn-primary { font-size: 14px; padding: 8px 18px; border-radius: 8px; border: none; background: #378ADD; color: #fff; cursor: pointer; }
+    .btn-primary:hover { background: #185FA5; }
+    .hero { padding: 5rem 2rem 3rem; text-align: center; max-width: 800px; margin: 0 auto; }
+    .logo { font-size: 52px; font-weight: 700; color: #fff; letter-spacing: -2px; margin-bottom: 0.75rem; }
+    .logo span { color: #378ADD; }
+    .tagline-main { font-size: 22px; font-weight: 500; color: #fff; margin-bottom: 8px; }
+    .tagline-sub { font-size: 16px; color: rgba(255,255,255,0.4); margin-bottom: 2rem; }
+    .tagline-sub span { color: #378ADD; font-weight: 500; }
+    .search-outer { max-width: 560px; margin: 0 auto 1.5rem; background: #111; border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 7px; display: flex; align-items: center; gap: 8px; }
+    .search-inner { background: #111; border-radius: 40px; flex: 1; display: flex; align-items: center; padding: 8px 18px; }
+    .search-inner input { border: none; outline: none; font-size: 15px; color: #fff; background: transparent; flex: 1; }
+    .search-inner input::placeholder { color: rgba(255,255,255,0.3); }
+    .search-btn { background: rgba(255,255,255,0.1); border: none; border-radius: 40px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; }
+    .search-btn:hover { background: rgba(255,255,255,0.18); }
+    .search-btn i { font-size: 20px; color: #fff; }
+    .filters { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
+    .filter-btn { font-size: 13px; padding: 6px 18px; border-radius: 99px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: rgba(255,255,255,0.6); cursor: pointer; transition: all 0.15s; }
+    .filter-btn.active { background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.4); }
+    .filter-btn:hover { background: rgba(255,255,255,0.08); color: #fff; }
+    .section-wrap { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
+    .section-title { font-size: 14px; font-weight: 600; color: #378ADD; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.25rem; }
+    .mentor-scroll-wrapper { overflow-x: auto; padding-bottom: 1rem; scrollbar-width: none; cursor: grab; }
+    .mentor-scroll-wrapper::-webkit-scrollbar { display: none; }
+    .mentor-scroll-wrapper:active { cursor: grabbing; }
+    .mentor-row { display: flex; gap: 14px; width: max-content; }
+    .mentor-card { background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem; cursor: pointer; transition: border-color 0.2s, transform 0.15s; width: 180px; flex-shrink: 0; }
+    .mentor-card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-2px); }
+    .mentor-avatar { width: 56px; height: 56px; border-radius: 8px; margin-bottom: 10px; object-fit: cover; display: block; }
+    .mentor-avatar-placeholder { width: 56px; height: 56px; border-radius: 8px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.06); border: 0.5px solid rgba(255,255,255,0.1); }
+    .avatar-icon { font-size: 22px; color: rgba(255,255,255,0.25); }
+    .mentor-name { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+    .verified-badge { display: inline-flex; align-items: center; gap: 3px; font-size: 10px; color: #378ADD; border: 0.5px solid #378ADD; padding: 2px 7px; border-radius: 4px; }
+    .verified-badge i { font-size: 11px; }
+    .show-more-wrap { display: flex; justify-content: flex-end; margin-top: 1rem; }
+    .show-more-btn { font-size: 13px; padding: 7px 18px; border-radius: 6px; border: 0.5px solid rgba(255,255,255,0.2); background: transparent; color: rgba(255,255,255,0.6); cursor: pointer; transition: all 0.15s; }
+    .show-more-btn:hover { background: rgba(255,255,255,0.06); color: #fff; }
+    footer { border-top: 0.5px solid rgba(255,255,255,0.08); padding: 2rem; text-align: center; font-size: 13px; color: rgba(255,255,255,0.25); }
+    footer span { color: #378ADD; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="nav-logo" href="file:///C:/Users/csabl/Downloads/verifly_1.html#">Veri<span>fly</span></a>
+    <div class="nav-btns">
+      <button class="btn-ghost">Sign in</button>
+      <button class="btn-primary">Sign up</button>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="logo">Veri<span>fly</span></div>
+    <div class="tagline-main">Verified profiles about trading mentors.</div>
+    <div class="tagline-sub">Find out <span>who you can trust</span> — and <span>who you can't.</span></div>
+    <div class="search-outer">
+      <div class="search-inner"><input type="text" placeholder="Search a mentor"></div>
+      <button class="search-btn"><i class="ti ti-search"></i></button>
+    </div>
+    <div class="filters">
+      <button class="filter-btn active" onclick="setFilter(this)">All</button>
+      <button class="filter-btn" onclick="setFilter(this)">Forex</button>
+      <button class="filter-btn" onclick="setFilter(this)">Crypto</button>
+      <button class="filter-btn" onclick="setFilter(this)">Stocks</button>
+      <button class="filter-btn" onclick="setFilter(this)">Options</button>
+    </div>
+  </div>
+  <div class="section-wrap">
+    <div class="section-title">Popular mentors</div>
+    <div class="mentor-scroll-wrapper" id="mentorScroll">
+      <div class="mentor-row">
+        <div class="mentor-card">
+          <img class="mentor-avatar" src="./Verifly – Verified profiles about trading mentors HTML_files/channels4_profile.jpg" alt="Fxalexg" onerror="this.style.display=&#39;none&#39;;this.nextElementSibling.style.display=&#39;flex&#39;">
+          <div class="mentor-avatar-placeholder" style="display:none"><i class="ti ti-user avatar-icon"></i></div>
+          <div class="mentor-name">Fxalexg</div>
+          <div class="verified-badge"><i class="ti ti-shield-check"></i> Verified</div>
+        </div>
+        <div class="mentor-card">
+          <img class="mentor-avatar" src="./Verifly – Verified profiles about trading mentors HTML_files/channels4_profile(1).jpg" alt="Mambafx" onerror="this.style.display=&#39;none&#39;;this.nextElementSibling.style.display=&#39;flex&#39;">
+          <div class="mentor-avatar-placeholder" style="display:none"><i class="ti ti-user avatar-icon"></i></div>
+          <div class="mentor-name">Mambafx</div>
+          <div class="verified-badge"><i class="ti ti-shield-check"></i> Verified</div>
+        </div>
+        <div class="mentor-card">
+          <img class="mentor-avatar" src="./Verifly – Verified profiles about trading mentors HTML_files/channels4_profile(2).jpg" alt="LamboRaul" onerror="this.style.display=&#39;none&#39;;this.nextElementSibling.style.display=&#39;flex&#39;">
+          <div class="mentor-avatar-placeholder" style="display:none"><i class="ti ti-user avatar-icon"></i></div>
+          <div class="mentor-name">LamboRaul</div>
+          <div class="verified-badge"><i class="ti ti-shield-check"></i> Verified</div>
+        </div>
+        <div class="mentor-card">
+          <img class="mentor-avatar" src="./Verifly – Verified profiles about trading mentors HTML_files/channels4_profile(3).jpg" alt="ICT" onerror="this.style.display=&#39;none&#39;;this.nextElementSibling.style.display=&#39;flex&#39;">
+          <div class="mentor-avatar-placeholder" style="display:none"><i class="ti ti-user avatar-icon"></i></div>
+          <div class="mentor-name">ICT</div>
+          <div class="verified-badge"><i class="ti ti-shield-check"></i> Verified</div>
+        </div>
+        <div class="mentor-card">
+          <img class="mentor-avatar" src="./Verifly – Verified profiles about trading mentors HTML_files/channels4_profile(4).jpg" alt="Casper SMC" onerror="this.style.display=&#39;none&#39;;this.nextElementSibling.style.display=&#39;flex&#39;">
+          <div class="mentor-avatar-placeholder" style="display:none"><i class="ti ti-user avatar-icon"></i></div>
+          <div class="mentor-name">Casper SMC</div>
+          <div class="verified-badge"><i class="ti ti-shield-check"></i> Verified</div>
+        </div>
+        <div class="mentor-card">
+          <img class="mentor-avatar" src="./Verifly – Verified profiles about trading mentors HTML_files/channels4_profile(5).jpg" alt="TJR" onerror="this.style.display=&#39;none&#39;;this.nextElementSibling.style.display=&#39;flex&#39;">
+          <div class="mentor-avatar-placeholder" style="display:none"><i class="ti ti-user avatar-icon"></i></div>
+          <div class="mentor-name">TJR</div>
+          <div class="verified-badge"><i class="ti ti-shield-check"></i> Verified</div>
+        </div>
+      </div>
+    </div>
+    <div class="show-more-wrap">
+      <button class="show-more-btn">Show more mentors</button>
+    </div>
+  </div>
+  <footer>© 2025 Veri<span>fly</span> — Verified profiles about trading mentors.</footer>
+  <script>
+    function setFilter(btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+    const el = document.getElementById('mentorScroll');
+    let isDown = false, startX, scrollLeft;
+    el.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - el.offsetLeft; scrollLeft = el.scrollLeft; });
+    el.addEventListener('mouseleave', () => isDown = false);
+    el.addEventListener('mouseup', () => isDown = false);
+    el.addEventListener('mousemove', e => {
+      if (!isDown) return;
+      e.preventDefault();
+      el.scrollLeft = scrollLeft - (e.pageX - el.offsetLeft - startX);
+    });
+  </script>
+
+
+</body></html>
